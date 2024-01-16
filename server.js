@@ -3,7 +3,7 @@ const http = require('http');
 
 const PORT = 5000;
 const body = "<h1>Hello there!</h1>";
-const code = `
+const responseBody = `
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -19,7 +19,7 @@ const code = `
 
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
-    res.write(code);
+    res.write(responseBody);
     res.end();
 });
 server.listen(PORT, () => console.log('Server is listening on port', PORT));
